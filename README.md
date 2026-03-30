@@ -44,24 +44,18 @@ Everything else builds on top of that: meeting ingestion, task triage, context l
 
 ## Setup
 
-### If you're comfortable with a terminal
+1. Clone or download the repo
+2. Run the installer
 
 ```bash
-git clone https://github.com/kes-al/kp-os.git ~/Documents/vault
-cd ~/Documents/vault
-claude
-# then type: /bootstrap
+git clone https://github.com/kes-al/kp-os.git
+cd kp-os
+bash setup.sh
 ```
 
-### If you're not
+The installer checks for Homebrew, Claude Code, and Obsidian (installs anything missing), asks where you want your vault, copies everything into place, opens it in Obsidian, installs and configures all 8 plugins, and writes the Obsidian settings.
 
-1. Download the [latest release](https://github.com/kes-al/kp-os/releases/latest) as a zip
-2. Extract it somewhere
-3. Open Terminal (Cmd+Space, type "Terminal", press Enter)
-4. Type `bash `, drag `setup.sh` into the window, press Enter
-5. Follow the prompts (takes about 5 minutes)
-
-The installer handles Homebrew (a Mac package manager), Claude Code, Obsidian, plugins, and configuration. After that, `/bootstrap` runs an interview that asks about your role, team, and work, then builds a personalized vault with the right folder structure and configuration.
+After that, it tells you to open the terminal panel in Obsidian, run `claude`, and type `/bootstrap`. That's a short interview about your role, team, and work. It generates a personalized vault: folder structure, entity registry, hub notes for your clients and projects, and the configuration file that Claude Code reads before every operation.
 
 Once bootstrap finishes, run `/startday` and you're working.
 
