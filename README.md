@@ -17,15 +17,13 @@
 
 ---
 
-KP/OS is a knowledge management system built on [Obsidian](https://obsidian.md) and [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
-
-Obsidian is a free note-taking app where all your notes are plain markdown files stored on your computer. Claude Code is an AI agent that runs in your terminal and can read, write, and organize those files. KP/OS connects the two: your work, meetings, tasks, projects, people, and ideas all live in one connected graph, and AI handles the organization and heavy lifting.
+KP/OS is a structured knowledge management system built on [Obsidian](https://obsidian.md) and [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Your work, meetings, tasks, projects, people, and ideas all live in one connected graph, and AI handles the organization and heavy lifting.
 
 I built this to manage a full client roster, a team, cross-functional projects, and my own thinking, all from one system. It's not a template. It's a working system that runs a real job, packaged so you can adapt it for yours.
 
 ## Why I built this
 
-Meeting notes end up in one app. Tasks in another. Project context lives in your head until someone asks a question and you're digging through three tools trying to remember what was decided. Action items from meetings disappear into Slack threads you'll never scroll back to.
+Meeting notes end up in one app. Tasks in another. Project context lives in your head until someone asks a question and you're digging through three tools trying to remember what was decided. Action items from meetings disappear into threads you'll never scroll back to.
 
 I wanted everything in one place with an AI that could actually help me manage it. Meetings generate structured notes that file themselves under the right client and project. Action items get extracted and tracked. When I need to prep for a call, one command loads everything I need. When review season comes, my accomplishments are already logged. The system does the bookkeeping so I can focus on the work.
 
@@ -56,13 +54,15 @@ Everything else builds on top of that: meeting ingestion, task triage, context l
 - **Audit your vault.** Find orphaned notes, missing links, stale projects, and metadata issues across hundreds of files. Auto-fix what's safe to fix.
 - **Work on real deliverables with full context.** Hand off deep work to [Claude.ai](https://claude.ai) for RFP responses, strategy docs, or architecture reviews. The AI has persistent context from your vault so you're not re-explaining everything each session.
 
-## Claude Code + Claude.ai
+## How I use Claude Code and Claude.ai together
 
-The system uses two tools together.
+This is how I work with the system, but it's not the only way. You could use just Claude Code and get most of the value. You could use just Claude.ai with the vault as a reference. The system is flexible.
+
+That said, the two tools complement each other well:
 
 **Claude Code** runs in the terminal and handles operations: creating notes, ingesting meetings, managing tasks, scaffolding projects, running audits. It reads and writes your vault files directly.
 
-**Claude.ai** handles thinking. When you need to go deep on something (write a strategy doc, work through an RFP, analyze options), you open a Claude.ai project that already has context from your vault. It knows your clients, your team, your past decisions.
+**[Claude.ai](https://claude.ai)** is for deeper work. When I need to write a strategy doc, work through an RFP, or analyze architecture options, I open a Claude.ai project that already has context from my vault. It knows my clients, my team, my past decisions. I use it to draft deliverables, think through problems, and craft responses without re-explaining the full situation every time.
 
 The connection between them is a file called `project-instructions.md` that lives in every project folder. It's a self-contained briefing that you paste into a Claude.ai project's custom instructions. When things change, you re-sync with one command and paste the update. Claude.ai stays current without you explaining anything manually.
 
