@@ -9,7 +9,7 @@
   </pre>
 </p>
 
-<p align="center">
+<p align="left">
   <strong>A personal operating system.</strong><br>
   <em>Digital second brain built on an AI-powered knowledge graph.</em><br><br>
   by <a href="https://github.com/kes-al">Kesal Patel</a>
