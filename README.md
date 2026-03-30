@@ -11,8 +11,7 @@
 
 <p align="left">
   <strong>A personal operating system.</strong><br>
-  <em>Digital second brain built on an AI-powered knowledge graph.</em><br><br>
-  by <a href="https://github.com/kes-al">Kesal Patel</a>
+  <em>Digital second brain built on an AI-powered knowledge graph.</em>
 </p>
 
 ---
@@ -42,6 +41,29 @@ Three commands run the day:
 ```
 
 Everything else builds on top of that: meeting ingestion, task triage, context loading, thinking tools, weekly reviews, vault audits. There are 33 commands total.
+
+## Setup
+
+### If you're comfortable with a terminal
+
+```bash
+git clone https://github.com/kes-al/kp-os.git ~/Documents/vault
+cd ~/Documents/vault
+claude
+# then type: /bootstrap
+```
+
+### If you're not
+
+1. Download the [latest release](https://github.com/kes-al/kp-os/releases/latest) as a zip
+2. Extract it somewhere
+3. Open Terminal (Cmd+Space, type "Terminal", press Enter)
+4. Type `bash `, drag `setup.sh` into the window, press Enter
+5. Follow the prompts (takes about 5 minutes)
+
+The installer handles Homebrew (a Mac package manager), Claude Code, Obsidian, plugins, and configuration. After that, `/bootstrap` runs an interview that asks about your role, team, and work, then builds a personalized vault with the right folder structure and configuration.
+
+Once bootstrap finishes, run `/startday` and you're working.
 
 ## A few things it can do
 
@@ -79,29 +101,6 @@ The system includes step-by-step guides so you're not figuring things out from r
 | **[Claude.ai Project Setup](_meta/guides/claude-ai-project-setup.md)** | Connecting a vault project to Claude.ai for deep work sessions |
 
 There's also a full user manual (`GUIDE.md`) in the vault root.
-
-## Setup
-
-### If you're comfortable with a terminal
-
-```bash
-git clone https://github.com/kes-al/kp-os.git ~/Documents/vault
-cd ~/Documents/vault
-claude
-# then type: /bootstrap
-```
-
-### If you're not
-
-1. Download the [latest release](https://github.com/kes-al/kp-os/releases/latest) as a zip
-2. Extract it somewhere
-3. Open Terminal (Cmd+Space, type "Terminal", press Enter)
-4. Type `bash `, drag `setup.sh` into the window, press Enter
-5. Follow the prompts (takes about 5 minutes)
-
-The installer handles Homebrew (a Mac package manager), Claude Code, Obsidian, plugins, and configuration. After that, `/bootstrap` runs an interview that asks about your role, team, and work, then builds a personalized vault with the right folder structure and configuration.
-
-Once bootstrap finishes, run `/startday` and you're working.
 
 ## What's included
 
