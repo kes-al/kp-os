@@ -1,0 +1,17 @@
+filters:
+  and:
+    - file.inFolder("work/clients")
+    - type == "client"
+properties:
+  status:
+    displayName: Status
+views:
+  - type: table
+    name: All Clients
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - file.mtime

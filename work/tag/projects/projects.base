@@ -1,0 +1,22 @@
+filters:
+  and:
+    - file.inFolder("work/tag/projects")
+    - type == "project"
+formulas:
+  days_since_update: (now() - file.mtime).days.round(0)
+properties:
+  status:
+    displayName: Status
+  formula.days_since_update:
+    displayName: Days Since Update
+views:
+  - type: table
+    name: TAG Projects
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - formula.days_since_update
+      - file.mtime

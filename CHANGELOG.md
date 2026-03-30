@@ -1,0 +1,33 @@
+## [1.0.0] — 2026-03-30
+
+### Synced from vault
+- 33 slash commands
+- 12 templates
+- 8 plugins
+- 5 guides
+
+### Changes
+?? .claude/
+?? .gitignore
+?? CHANGELOG.md
+?? GUIDE.md
+?? LICENSE
+?? README.md
+?? SETUP.md
+?? _meta/
+?? _plugins/
+?? agent-output/
+?? attachments/
+?? code/
+?? daily-notes/
+?? domains/
+?? intake/
+?? notes/
+?? people/
+?? setup.sh
+?? templates/
+?? work/
+
+---
+
+

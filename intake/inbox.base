@@ -1,0 +1,22 @@
+filters:
+  or:
+    - file.inFolder("intake/meetings")
+    - file.inFolder("intake/notes")
+    - file.inFolder("intake/clipper")
+formulas:
+  age_days: (now() - file.ctime).days.round(0)
+  source: if(file.folder.contains("granola"), "Granola", if(file.folder.contains("manual"), "Manual", if(file.folder.contains("clipper"), "Clipper", "Note")))
+properties:
+  formula.age_days:
+    displayName: Days Old
+  formula.source:
+    displayName: Source
+views:
+  - type: table
+    name: Inbox
+    order:
+      - file.name
+      - formula.source
+      - formula.age_days
+      - file.folder
+      - file.ctime
