@@ -55,7 +55,7 @@ bash setup.sh
 
 The installer checks for Homebrew, Claude Code, and Obsidian (installs anything missing), asks where you want your vault, copies everything into place, opens it in Obsidian, installs and configures all 8 plugins, and writes the Obsidian settings.
 
-After that, it tells you to open the terminal panel in Obsidian, run `claude`, and type `/bootstrap`. That's a short interview about your role, team, and work. It generates a personalized vault: folder structure, entity registry, hub notes for your clients and projects, and the configuration file that Claude Code reads before every operation.
+After that, open a terminal in your vault directory, run `claude`, and type `/bootstrap`. That's a short interview about your role, team, and work. It generates a personalized vault: folder structure, entity registry, hub notes for your clients and projects, and the configuration file that Claude Code reads before every operation.
 
 Once bootstrap finishes, run `/startday` and you're working.
 
