@@ -12,28 +12,39 @@
 <p align="center">
   <strong>A personal operating system.</strong><br>
   <em>Digital second brain built on an AI-powered knowledge graph.</em><br><br>
-  by <a href="https://github.com/kesapat">Kesal Patel</a>
+  by <a href="https://github.com/kes-al">Kesal Patel</a>
 </p>
 
 ---
 
-KP/OS is an opinionated knowledge management system built on [Obsidian](https://obsidian.md) and [Claude Code](https://docs.anthropic.com/en/docs/claude-code). It connects your work, meetings, tasks, and thinking in a single graph with AI as the intelligence layer.
+KP/OS is a structured knowledge management system built on [Obsidian](https://obsidian.md) and [Claude Code](https://docs.anthropic.com/en/docs/claude-code). It connects your work, meetings, tasks, and thinking in a single graph with AI as the intelligence layer.
 
-This is the system I use every day to manage 30+ clients, direct reports, cross-functional projects, and my own thinking. It's not a generic template — it's a real workflow that runs a real job, packaged so you can adapt it for yours.
+I built this to manage a full client roster, a direct team, cross-functional projects, and my own thinking — all from one system. It's not a template. It's a real workflow that runs a real job, packaged so you can adapt it for yours.
 
-## What's in the box
+## What you can do with it
 
-- **33 slash commands** — daily workflow, meeting ingestion, task management, triage, discovery, scaffolding, maintenance
-- **5 AI skill files** — Obsidian markdown, CLI, Bases, web extraction, canvas
-- **12 templates** — daily notes, clients, projects, people, meetings, domains, decisions, RFPs, initiatives
-- **5 guides** — step-by-step walkthroughs for daily workflow, new clients, new projects, initiatives, Claude.ai setup
-- **4 live dashboards** — clients, projects, daily notes, intake inbox (Obsidian Bases)
-- **8 plugins** — pre-configured and ready to go
-- **Session start hook** — auto-loads your daily context when Claude Code opens
-- **Interactive installer** — one script sets up everything
-- **Bootstrap interview** — personalizes the system for your role, team, and work
+- **Prep for any client call in 30 seconds.** Load a client's full context — hub note, recent meetings, open tasks, project status, code docs — with one command.
+- **Never lose a meeting action item.** Paste a transcript or let Granola sync it. The system structures the notes, extracts your tasks, files the meeting under the right client and project, and puts your action items in a holding pen for review.
+- **Batch-triage 50 accumulated tasks in 5 minutes.** Instead of scrolling through daily notes, review tasks grouped by client and project. Promote, defer, cancel, or delegate in bulk.
+- **Answer questions in your own voice.** Ask the vault a question and get a response based on your past decisions, stated positions, and communication patterns. Useful for RFP questions, strategy prompts, and gut-checking your own thinking.
+- **Surface themes you haven't consciously noticed.** Discover what concepts keep showing up across unrelated clients and projects — the ideas you're circling without realizing it.
+- **Build career evidence automatically.** Every time you close a day, the system scans your work for review-worthy accomplishments and logs them. When review season comes, the evidence is already there.
+- **Audit your vault for broken connections.** Find orphaned notes, missing wikilinks, stale projects, and frontmatter issues across hundreds of files. Auto-fix what's safe to fix.
+- **Draft real deliverables with full project context.** Hand off deep thinking to Claude.ai — RFP responses, strategy docs, architecture reviews — with persistent context that stays in sync with your vault. No re-explaining your situation every time.
 
-## How it works
+## Two tools, one system
+
+KP/OS runs on two things that work together:
+
+**Claude Code** handles the plumbing. It lives in your terminal, reads your vault, and runs slash commands — creating daily notes, ingesting meetings, managing tasks, scaffolding projects, running audits. It's the operational backbone.
+
+**Claude.ai** handles the thinking. When you need to go deep on a project — write a strategy doc, work through an RFP, analyze architecture options — you open a Claude.ai project that has persistent context from your vault. It knows your clients, your team, your past decisions, your communication style.
+
+The bridge between them is a file called `project-instructions.md` that lives in every project folder. It's a portable, self-contained briefing — no wikilinks, no vault-specific syntax — that you paste into a Claude.ai project's custom instructions. When the project evolves, you re-sync it with one command (`/sync-instructions`) and paste the updated version. Claude.ai always has current context without you manually explaining anything.
+
+This means you can go from "I need to think through the platform migration strategy" to a Claude.ai session that already knows your client, your team, your constraints, and your past decisions — in about 10 seconds.
+
+## The daily habit
 
 Three commands. Every day.
 
@@ -43,14 +54,14 @@ Three commands. Every day.
 /closeday          # Evening: summarizes, carries over, logs career evidence
 ```
 
-Everything else builds on top of that: meeting ingestion, task triage, context loading, thinking tools, weekly reviews, vault audits.
+Everything else builds on top of that: meeting ingestion, task triage, context loading, thinking tools, weekly reviews, vault audits. The system includes step-by-step guides for the most common workflows — daily routine, new client onboarding, new project setup, initiative planning, and Claude.ai integration — so you're not just staring at 33 commands.
 
 ## Setup
 
 ### For technical people
 
 ```bash
-git clone https://github.com/kesapat/kpos.git ~/Documents/vault
+git clone https://github.com/kes-al/kp-os.git ~/Documents/vault
 cd ~/Documents/vault
 claude
 # then type: /bootstrap
@@ -58,14 +69,27 @@ claude
 
 ### For everyone else
 
-1. Download the [latest release](https://github.com/kesapat/kpos/releases/latest) as a zip
+1. Download the [latest release](https://github.com/kes-al/kp-os/releases/latest) as a zip
 2. Extract it somewhere
 3. Open Terminal, type `bash `, drag `setup.sh` into the window, press Enter
 4. Follow the prompts — takes about 5 minutes
 
 The installer handles Homebrew, Claude Code, Obsidian, plugins, and configuration. Then `/bootstrap` interviews you about your role, team, and work to personalize everything.
 
-## Commands
+## What's in the box
+
+- **33 slash commands** — daily workflow, meeting ingestion, task management, triage, discovery, scaffolding, maintenance
+- **5 AI skill files** — Obsidian markdown, CLI, Bases, web extraction, canvas references that Claude Code consults before writing vault content
+- **12 templates** — daily notes, clients, projects, people, meetings, domains, decisions, RFPs, initiatives
+- **5 guides** — step-by-step walkthroughs for daily workflow, new clients, new projects, initiatives, Claude.ai setup
+- **4 live dashboards** — clients, projects, daily notes, intake inbox (Obsidian Bases)
+- **8 plugins** — pre-configured and ready to go
+- **Session start hook** — auto-loads your daily context when Claude Code opens
+- **Interactive installer** — one script sets up everything
+- **Bootstrap interview** — personalizes the system for your role, team, and work
+
+<details>
+<summary><strong>Full command reference</strong></summary>
 
 ### Daily workflow
 | Command | What it does |
@@ -124,6 +148,8 @@ The installer handles Homebrew, Claude Code, Obsidian, plugins, and configuratio
 | `/weekly-review` | Week in review + drift check + next week priorities |
 | `/commit` | Git commit and push |
 
+</details>
+
 ## Vault structure
 
 ```
@@ -144,7 +170,7 @@ The installer handles Homebrew, Claude Code, Obsidian, plugins, and configuratio
 
 ## This is a starting point
 
-This system reflects how I work. The folder structure, the commands, the daily note format — all of it is opinionated and personal. You should change it.
+This system reflects how I work. The folder structure, the commands, the daily note format — all of it is structured and personal. You should change it.
 
 - Restructure folders to match your thinking
 - Modify commands by editing the markdown files in `/.claude/commands/`
@@ -155,9 +181,9 @@ You can do all of this in Claude Code itself. Just tell it what you want to chan
 
 ## Attribution
 
-KP/OS is built on a framework by **Vin Verma** ([@internetvin](https://x.com/internetvin) · [internetvin.com](https://internetvin.com)), who created the concept of using an Obsidian vault as a knowledge graph for Claude Code. The discovery commands — `/ghost`, `/challenge`, `/emerge`, `/drift`, `/ideas`, `/trace`, `/connect`, `/graduate` — come from his work.
+The starting point for KP/OS was **Vin Verma**'s work ([@internetvin](https://x.com/internetvin) · [internetvin.com](https://internetvin.com)) on using an Obsidian vault as a knowledge graph for Claude Code. The discovery commands — `/ghost`, `/challenge`, `/emerge`, `/drift`, `/ideas`, `/trace`, `/connect`, `/graduate` — come from his framework. Watch the original walkthrough: [How I Use Obsidian + Claude Code to Run My Life](https://www.youtube.com/watch?v=6MBq1paspVU) (The Startup Ideas Podcast with Greg Isenberg).
 
-Watch the original walkthrough: [How I Use Obsidian + Claude Code to Run My Life](https://www.youtube.com/watch?v=6MBq1paspVU) (The Startup Ideas Podcast with Greg Isenberg)
+Everything else — the client-project architecture, meeting ingestion pipeline, task management with deduplication, triage system, scaffolding commands, Claude.ai integration layer, entity registry routing, career evidence capture, vault auditing, the bootstrap interview, and the daily note workflow — I built to run my own job and packaged here for others.
 
 ## Requirements
 
